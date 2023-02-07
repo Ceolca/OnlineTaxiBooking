@@ -7,7 +7,6 @@ using OnlineTaxiBooking.Repository;
 
 namespace OnlineTaxiBooking.Controllers
 {
-    [Authorize(Roles ="User")]
     public class UsersController : Controller
     {
         private UsersRepository _repository;
