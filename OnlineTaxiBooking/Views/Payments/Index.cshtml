@@ -1,0 +1,60 @@
+﻿@model IEnumerable<OnlineTaxiBooking.Models.PaymentsModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentCurrency)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentCurrency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentType)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PaymentId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PaymentId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PaymentId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
